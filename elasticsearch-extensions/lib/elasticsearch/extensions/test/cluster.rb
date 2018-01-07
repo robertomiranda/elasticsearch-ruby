@@ -237,6 +237,7 @@ module Elasticsearch
             @arguments[:number_of_nodes]   ||= ENV.fetch('TEST_CLUSTER_NODES',     2).to_i
             @arguments[:network_host]      ||= ENV.fetch('TEST_CLUSTER_NETWORK_HOST', __default_network_host)
             @arguments[:quiet]             ||= ! ENV.fetch('QUIET', '').empty?
+            @arguments[:version]           ||= ENV.fetch('TEST_CLUSTER_VERSION',   '')
 
             @clear_cluster = !!@arguments[:clear_cluster] || (ENV.fetch('TEST_CLUSTER_CLEAR', 'true') != 'false')
 
